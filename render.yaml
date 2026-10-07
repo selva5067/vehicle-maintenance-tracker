@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: vehicle-maintenance-tracker
+    env: node
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGO_URI
+        value: mongodb://usersp:5067@ac-bygzsww-shard-00-00.bjv4pyh.mongodb.net:27017,ac-bygzsww-shard-00-01.bjv4pyh.mongodb.net:27017,ac-bygzsww-shard-00-02.bjv4pyh.mongodb.net:27017/vehicle_maintenance_tracker?ssl=true&replicaSet=atlas-c6f53o-shard-0&authSource=admin&appName=Cluster0
+      - key: JWT_SECRET
+        value: f41830ded5db40eeeaacdfa026f10ffeed27e5ce5f0a05600daf1eb663532b15
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: REMINDER_DAYS_BEFORE
+        value: 3
